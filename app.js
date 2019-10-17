@@ -16,13 +16,13 @@ const toWin = [
     [0, 4, 8],
     [6, 4, 2]
 ]
-
+//to cheack. it is nan and convert int  or not
 if (isNaN(parseInt(localStorage.getItem('player-score')))) {
     localStorage.setItem('player-score', 0);
     // localStorage.setItem('player2-score', 0);
     localStorage.setItem('Tie-score', 0);
 }
-
+//function take score from local storage
 const geetScore = function () {
     let scorePlayer = localStorage.getItem("player-score");
     // let scprePlayer2 = localStorage.getItem("player2-score");
@@ -41,40 +41,40 @@ document.querySelector('button').addEventListener('click', function () { locatio
 const getTurn = function () {
     let pick;
     // if(radios[2].checked){
-        playerTurn = true;
-        // computerTurn = false;
+    playerTurn = true;
+    // computerTurn = false;
     // }
     //    else{ 
-        for (let i = 0; i < radios.length; i++) {
-            if (radios[i].checked) {
-                console.log("it is working");
-                console.log(radios[i].value);
-    
-                pick = radios[i].value
-                if (pick === "O") {
-                    plyerTurn = false
-                } else {
-                    plyerTurn = true;
-                }
+    for (let i = 0; i < radios.length; i++) {
+        if (radios[i].checked) {
+            console.log("it is working");
+            console.log(radios[i].value);
+
+            pick = radios[i].value
+            if (pick === "O") {
+                plyerTurn = false
+            } else {
+                plyerTurn = true;
             }
-    
         }
+
+    }
     //    }
-    
-    
-    
+
+
+
 }
 getTurn();
-//inint new img with set some attribute and append to img
 
+//inint new img with set some attribute and append to img
 const myFunction = function () {
     let img = document.createElement("img");
     //split and take only number 
     let num = this.id.split('cell')[1]
     console.log(this);
-    
+
     // if(radios[2].checked){
-        // cm();
+    // cm();
     // }
     // else{
     if (plyerTurn === true) {
@@ -189,12 +189,12 @@ const endGame = function () {
 //     let img = document.createElement("img");
 //     let num = Math.floor(Math.random() * 9);
 //     let plaa = 'cell' + num;
-    
+
 //     if(!document.querySelector(`#${plaa}>img`)){
 //         if(document.querySelector(`#${plaa}>img`).getAttribute('alt') != 'x'){
 
 //             console.log(plaa);
-            
+
 //             img.setAttribute('id', 'o');
 //             img.setAttribute("src", "image/ooo.png");
 //             img.setAttribute("width", "100px");
@@ -203,7 +203,7 @@ const endGame = function () {
 //             document.querySelector(`#${plaa}`).appendChild(img);
 //             console.log(document.querySelector(`#${plaa}>img`).getAttribute('alt'));
 //             plyerTurn = true;
-            
+
 //             for (let i = 0; i < toWin.length; i++) {
 //                 for (let j = 0; j < toWin[i].length; j++) {
 //                     if (num == toWin[i][j]) {
@@ -221,6 +221,7 @@ const endGame = function () {
 
 //this for try play agin
 const tryAgain = document.querySelector('#try-again');
+//reset box to 0 0;
 const restarGame = function () {
     if (geetScore == NaN) {
     }
